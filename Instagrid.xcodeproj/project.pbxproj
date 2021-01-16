@@ -7,27 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8865AE6B25A8779F009F02BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8865AE6A25A8779F009F02BF /* Main.storyboard */; };
+		88ABE33925ADA6A200F97EAC /* GridViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88ABE33825ADA6A200F97EAC /* GridViewStyle.swift */; };
 		88B781FA25A3BAE900750201 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B781F925A3BAE900750201 /* AppDelegate.swift */; };
 		88B781FC25A3BAE900750201 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B781FB25A3BAE900750201 /* SceneDelegate.swift */; };
 		88B781FE25A3BAE900750201 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B781FD25A3BAE900750201 /* ViewController.swift */; };
-		88B7820125A3BAE900750201 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88B781FF25A3BAE900750201 /* Main.storyboard */; };
 		88B7820325A3BAEB00750201 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88B7820225A3BAEB00750201 /* Assets.xcassets */; };
 		88B7820625A3BAEB00750201 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88B7820425A3BAEB00750201 /* LaunchScreen.storyboard */; };
 		88B7821425A3BC0800750201 /* Delm-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 88B7821325A3BC0800750201 /* Delm-Medium.otf */; };
 		88B7821725A3BC1200750201 /* ThirstySoftRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 88B7821625A3BC1200750201 /* ThirstySoftRegular.otf */; };
+		88B7821C25A5C76800750201 /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B7821B25A5C76800750201 /* GridView.swift */; };
+		88DFEA1B25A7B939003556E9 /* ImageGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DFEA1A25A7B939003556E9 /* ImageGrid.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8865AE6A25A8779F009F02BF /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		88ABE33825ADA6A200F97EAC /* GridViewStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridViewStyle.swift; sourceTree = "<group>"; };
 		88B781F625A3BAE900750201 /* Instagrid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instagrid.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88B781F925A3BAE900750201 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88B781FB25A3BAE900750201 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		88B781FD25A3BAE900750201 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		88B7820025A3BAE900750201 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		88B7820225A3BAEB00750201 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		88B7820525A3BAEB00750201 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		88B7820725A3BAEB00750201 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		88B7821325A3BC0800750201 /* Delm-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Delm-Medium.otf"; path = "../../../../../Downloads/Delm-Medium.otf"; sourceTree = "<group>"; };
 		88B7821625A3BC1200750201 /* ThirstySoftRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = ThirstySoftRegular.otf; path = ../../../../../Downloads/ThirstySoftRegular.otf; sourceTree = "<group>"; };
+		88B7821B25A5C76800750201 /* GridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
+		88DFEA1A25A7B939003556E9 /* ImageGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGrid.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +77,8 @@
 		88B7820E25A3BB0500750201 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				88ABE33825ADA6A200F97EAC /* GridViewStyle.swift */,
+				88DFEA1A25A7B939003556E9 /* ImageGrid.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -78,7 +86,8 @@
 		88B7820F25A3BB1000750201 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				88B781FF25A3BAE900750201 /* Main.storyboard */,
+				88B7821B25A5C76800750201 /* GridView.swift */,
+				8865AE6A25A8779F009F02BF /* Main.storyboard */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -163,10 +172,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				88B7820625A3BAEB00750201 /* LaunchScreen.storyboard in Resources */,
+				8865AE6B25A8779F009F02BF /* Main.storyboard in Resources */,
 				88B7820325A3BAEB00750201 /* Assets.xcassets in Resources */,
 				88B7821725A3BC1200750201 /* ThirstySoftRegular.otf in Resources */,
 				88B7821425A3BC0800750201 /* Delm-Medium.otf in Resources */,
-				88B7820125A3BAE900750201 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -178,7 +187,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				88B781FE25A3BAE900750201 /* ViewController.swift in Sources */,
+				88DFEA1B25A7B939003556E9 /* ImageGrid.swift in Sources */,
 				88B781FA25A3BAE900750201 /* AppDelegate.swift in Sources */,
+				88B7821C25A5C76800750201 /* GridView.swift in Sources */,
+				88ABE33925ADA6A200F97EAC /* GridViewStyle.swift in Sources */,
 				88B781FC25A3BAE900750201 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -186,14 +198,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		88B781FF25A3BAE900750201 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				88B7820025A3BAE900750201 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		88B7820425A3BAEB00750201 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -336,7 +340,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = fr.stephaneRihet.Instagrid;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -355,7 +359,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = fr.stephaneRihet.Instagrid;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
