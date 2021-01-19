@@ -16,8 +16,20 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     private var swipe = UISwipeGestureRecognizer()
     
     // MARK: - Outlets
-    @IBOutlet weak var gridView: GridView!
+    @IBOutlet weak var MyView: UIView!
     
+    @IBOutlet var imageAddButton1: UIImageView!
+    @IBOutlet var imageAddButton2: UIImageView!
+    @IBOutlet var imageAddButton3: UIImageView!
+    @IBOutlet var imageAddButton4: UIImageView!
+    
+    @IBOutlet weak var viewButton2: UIView!
+    @IBOutlet weak var viewButton4: UIView!
+    
+    @IBOutlet var addButtonCollection: [UIImageView]!
+    
+    @IBOutlet var layoutsButton: [UIButton]!
+
     @IBOutlet weak var button1: UIButton!
     @IBOutlet weak var button2: UIButton!
     @IBOutlet weak var button3: UIButton!
@@ -26,9 +38,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        determinateSwipe()
-        gridView.style = .bottomGrid
+        self.determinateSwipe()
+
     }
+    
     
     // MARK: - Swipe to share
     
@@ -53,14 +66,24 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     func displayShare() {
-        let image = ImageGrid().createImage(gridView.MyView) //Using the class method
+        let image = ImageGrid().createImage(self.MyView) //Using the class method
         let vc = UIActivityViewController(activityItems: [image], applicationActivities: []) //A view controller that you use to offer standard services
         vc.completionWithItemsHandler = { activity, success, items, error in
             UIView.animate(withDuration: 0.4, delay: 0, animations: {
-                self.gridView.MyView.transform = .identity //The completion handler to execute after the activity view controller is dismissed.
+                self.MyView.transform = .identity //The completion handler to execute after the activity view controller is dismissed.
             })
         }
         present(vc, animated: true)
+    }
+    
+    //Checking the content of the displayed views image
+    func missingImage() -> Bool {
+        for imageInGrid in addButtonCollection {
+            if imageInGrid.image == nil && imageInGrid.superview!.isHidden == false {
+                return true
+            }
+        }
+        return false
     }
     
     func alertMissingImage() {
@@ -75,20 +98,20 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
     @objc func swipeToShare (_ sender:UISwipeGestureRecognizer) {
         if sender.direction == .up && whichOrientation() == true {
-            if gridView.missingImage() == false {
+            if missingImage() == false {
                 // animation du swipe, Myview sort de l'écran par le haut
                 UIView.animate(withDuration: 0.4, delay: 0, options: [], animations: {
-                    self.gridView.MyView.transform = CGAffineTransform(translationX: 0, y:-1000)
+                    self.MyView.transform = CGAffineTransform(translationX: 0, y:-1000)
                 })
                 displayShare()
             } else {
                 alertMissingImage()
             }
         }else if sender.direction == .left && whichOrientation() == false {
-            if gridView.missingImage() == false {
+            if missingImage() == false {
                 // animation du swipe, Myview sort de l'écran par la gauche
                 UIView.animate(withDuration: 0.4, delay: 0, options: [], animations: {
-                    self.gridView.MyView.transform = CGAffineTransform(translationX: -1000, y:0)
+                    self.MyView.transform = CGAffineTransform(translationX: -1000, y:0)
                 })
                 displayShare()
             } else {
@@ -98,21 +121,31 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
     }
     
+    
+    
 
-    
-    
-    
     // MARK: - Selection of layout between three choices
     
-    @IBAction func template1Button() {
-        gridView.style = .topGrid
+    @IBAction func layoutButtonsTouch(_ sender: UIButton) {
+        for layoutButton in layoutsButton {
+            layoutButton.isSelected = false
+        }
+        sender.isSelected = true
+        switch sender.tag {
+        case 1:
+            viewButton2.isHidden = true
+            viewButton4.isHidden = false
+        case 2:
+            viewButton2.isHidden = false
+            viewButton4.isHidden = true
+        case 3:
+            viewButton2.isHidden = false
+            viewButton4.isHidden = false
+        default:
+            break
+        }
     }
-    @IBAction func template2Button() {
-        gridView.style = .bottomGrid
-    }
-    @IBAction func template3Button() {
-        gridView.style = .fullGrid
-    }
+    
     
     
     // MARK: - Ajout de photos
@@ -151,17 +184,17 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             
             switch numberButton {
             case 1:
-                gridView.addButton1.image = selectedImage //Adding the selected image to UIImageview
-                button1.setImage(nil, for: .normal) //Remove button image (plus)
+                self.imageAddButton1.image = selectedImage //Adding the selected image to UIImageview
+                self.button1.setImage(nil, for: .normal) //Remove button image (plus)
             case 2:
-                gridView.addButton2.image = selectedImage
-                button2.setImage(nil, for: .normal)
+                self.imageAddButton2.image = selectedImage
+                self.button2.setImage(nil, for: .normal)
             case 3:
-                gridView.addButton3.image = selectedImage
-                button3.setImage(nil, for: .normal)
+                self.imageAddButton3.image = selectedImage
+                self.button3.setImage(nil, for: .normal)
             case 4:
-                gridView.addButton4.image = selectedImage
-                button4.setImage(nil, for: .normal)
+                self.imageAddButton4.image = selectedImage
+                self.button4.setImage(nil, for: .normal)
             default:
                 print("error in imagePickerController()")
             }
