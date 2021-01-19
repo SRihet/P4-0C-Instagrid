@@ -29,7 +29,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet var addButtonCollection: [UIImageView]!
     
     @IBOutlet var layoutsButton: [UIButton]!
-
+    
     @IBOutlet weak var button1: UIButton!
     @IBOutlet weak var button2: UIButton!
     @IBOutlet weak var button3: UIButton!
@@ -39,7 +39,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     override func viewDidLoad() {
         super.viewDidLoad()
         self.determinateSwipe()
-
+        
     }
     
     
@@ -95,7 +95,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         self.present(alert, animated: true, completion: nil)
     }
     
-
+    
     @objc func swipeToShare (_ sender:UISwipeGestureRecognizer) {
         if sender.direction == .up && whichOrientation() == true {
             if missingImage() == false {
@@ -123,7 +123,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     
     
-
+    
     // MARK: - Selection of layout between three choices
     
     @IBAction func layoutButtonsTouch(_ sender: UIButton) {
@@ -146,23 +146,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
     }
     
-    
-    
     // MARK: - Ajout de photos
     
-    @IBAction func addImageButton(sender: UIButton) {
-        switch sender {
-        case button1:
-            addImagePicker(number: 1)
-        case button2:
-            addImagePicker(number: 2)
-        case button3:
-            addImagePicker(number: 3)
-        case button4:
-            addImagePicker(number: 4)
-        default:
-            print("ERROR in addImageButton()")
-        }
+    @IBAction func addImageButton(_ sender: UIButton) {
+        let tag = sender.tag
+        addImagePicker(number: tag)
     }
     
     
@@ -204,4 +192,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
 }
+
+
 
